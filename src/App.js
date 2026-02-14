@@ -7,21 +7,26 @@ import Clients from './components/Clients';
 import Feedback from './components/Feedback';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import { getFeedbacks, addFeedback } from './api/feedbackAPI';
 
 function App() {
   const [feedbacks, setFeedbacks] = useState([]);
 
   useEffect(() => {
-    const savedFeedbacks = localStorage.getItem('feedbacks');
-    if (savedFeedbacks) {
-      setFeedbacks(JSON.parse(savedFeedbacks));
-    }
+    loadFeedbacks();
+    // Refresh feedbacks every 30 seconds to get new ones
+    const interval = setInterval(loadFeedbacks, 30000);
+    return () => clearInterval(interval);
   }, []);
 
-  const addFeedback = (feedback) => {
-    const newFeedbacks = [...feedbacks, { ...feedback, id: Date.now() }];
-    setFeedbacks(newFeedbacks);
-    localStorage.setItem('feedbacks', JSON.stringify(newFeedbacks));
+  const loadFeedbacks = async () => {
+    const data = await getFeedbacks();
+    setFeedbacks(data);
+  };
+
+  const handleAddFeedback = async (feedback) => {
+    await addFeedback(feedback);
+    await loadFeedbacks(); // Reload to show new feedback
   };
 
   return (
@@ -30,7 +35,7 @@ function App() {
       <Hero />
       <Services />
       <Clients />
-      <Feedback feedbacks={feedbacks} addFeedback={addFeedback} />
+      <Feedback feedbacks={feedbacks} addFeedback={handleAddFeedback} />
       <Footer />
       <WhatsAppButton />
     </div>
