@@ -98,8 +98,9 @@ const Feedback = ({ feedbacks, addFeedback }) => {
             ) : (
               <div className="feedback-carousel">
                 <div className="feedback-track">
-                  {feedbacks.map((feedback) => (
-                    <div key={feedback.id || feedback._id} className="feedback-card">
+                  {/* Duplicate feedbacks for seamless loop */}
+                  {[...feedbacks, ...feedbacks].map((feedback, index) => (
+                    <div key={`${feedback.id || feedback._id}-${index}`} className="feedback-card">
                       <div className="feedback-stars">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <span key={star} className={star <= feedback.rating ? 'star filled' : 'star'}>

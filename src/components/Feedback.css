@@ -126,12 +126,14 @@
 .feedback-carousel {
   overflow: hidden;
   position: relative;
+  width: 100%;
+  max-width: 100%;
 }
 
 .feedback-track {
   display: flex;
   gap: 20px;
-  animation: scroll 20s linear infinite;
+  animation: scroll 30s linear infinite;
   width: max-content;
 }
 
@@ -139,12 +141,19 @@
   animation-play-state: paused;
 }
 
+/* Create duplicate content for seamless loop */
+.feedback-track::after {
+  content: '';
+  display: flex;
+  gap: 20px;
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-100% - 20px));
   }
 }
 
@@ -152,8 +161,9 @@
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   padding: 25px;
   border-radius: 15px;
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 280px;
+  max-width: 280px;
+  flex-shrink: 0;
   border-left: 4px solid #00b4db;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
@@ -216,10 +226,29 @@
 @media (max-width: 968px) {
   .feedback-content {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
   
   .feedback-card {
-    min-width: 280px;
-    max-width: 280px;
+    min-width: 250px;
+    max-width: 250px;
+    padding: 20px;
+  }
+  
+  .feedback-carousel {
+    margin: 0 -20px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-card {
+    min-width: 220px;
+    max-width: 220px;
+    padding: 15px;
+  }
+  
+  .feedback-track {
+    gap: 15px;
   }
 }
