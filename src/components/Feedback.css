@@ -1,6 +1,18 @@
 .feedback {
-  background: var(--bg-secondary);
+  background: transparent;
   overflow-x: hidden;
+  position: relative;
+}
+
+.feedback::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-secondary);
+  opacity: 0.03;
 }
 
 .rating-summary {
@@ -109,20 +121,24 @@
 }
 
 .submit-button {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  background: var(--accent-gradient);
   color: white;
-  padding: 15px;
+  padding: 18px 30px;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   font-size: 1.1rem;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .submit-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+  filter: brightness(1.1);
 }
 
 .feedback-carousel {

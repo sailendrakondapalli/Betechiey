@@ -12,15 +12,18 @@
 
 .stat-card {
   text-align: center;
-  padding: 30px;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
-  border-radius: 15px;
+  padding: 35px;
+  background: var(--accent-gradient);
+  border-radius: 20px;
   color: white;
-  transition: transform 0.3s;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+  backdrop-filter: blur(10px);
 }
 
 .stat-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
 }
 
 .stat-number {
