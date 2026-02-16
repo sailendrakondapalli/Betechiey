@@ -8,27 +8,19 @@ const Clients = () => {
       logo: '🌐'
     },
     {
-      name: 'Data Analytics',
-      logo: '📊'
-    },
-    {
-      name: 'Penetration Testing',
-      logo: '🔒'
-    },
-    {
       name: 'App Development',
       logo: '📱'
     },
     {
-      name: 'Ethical Hacking',
-      logo: '🛡️'
+      name: 'UI/UX Design',
+      logo: '🎨'
     }
   ];
 
   const stats = [
     { number: '5', label: 'Happy Clients' },
     { number: '6', label: 'Projects Delivered' },
-    { number: '4', label: 'Services Offered' },
+    { number: '3', label: 'Services Offered' },
     { number: '100%', label: 'Client Satisfaction' }
   ];
 

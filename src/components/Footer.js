@@ -13,10 +13,9 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Services</h4>
             <ul>
-              <li>Web Design</li>
-              <li>Data Analytics</li>
-              <li>Application Development</li>
-              <li>Ethical Hacking</li>
+              <li>Web Development</li>
+              <li>App Development</li>
+              <li>UI/UX Design</li>
             </ul>
           </div>
           <div className="footer-section">
@@ -27,9 +26,8 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Follow Us</h4>
             <div className="social-links">
-              <a href="#linkedin">LinkedIn</a>
-              <a href="#twitter">Twitter</a>
-              <a href="#github">GitHub</a>
+              <a href="https://www.linkedin.com/in/sailendra-kondapalli-276418258/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <a href="https://github.com/sailendrakondapalli/" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
           </div>
         </div>

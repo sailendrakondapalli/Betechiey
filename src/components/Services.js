@@ -4,24 +4,19 @@ import './Services.css';
 const Services = () => {
   const services = [
     {
-      title: 'Web Design',
-      description: 'Beautiful, responsive websites that captivate your audience and drive results.',
+      title: 'Web Development',
+      description: 'Modern, responsive websites built with cutting-edge technologies for optimal performance.',
+      icon: '🌐'
+    },
+    {
+      title: 'App Development',
+      description: 'Native and cross-platform mobile applications tailored to your business needs.',
+      icon: '📱'
+    },
+    {
+      title: 'UI/UX Design',
+      description: 'Beautiful, intuitive user interfaces that provide exceptional user experiences.',
       icon: '🎨'
-    },
-    {
-      title: 'Data Analytics',
-      description: 'Transform your data into actionable insights with advanced analytics solutions.',
-      icon: '📊'
-    },
-    {
-      title: 'Application Development',
-      description: 'Custom applications built with cutting-edge technology for your unique needs.',
-      icon: '💻'
-    },
-    {
-      title: 'Ethical Hacking',
-      description: 'Protect your business with comprehensive security testing and vulnerability assessments.',
-      icon: '🔒'
     }
   ];
 

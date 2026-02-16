@@ -91,28 +91,30 @@ const Feedback = ({ feedbacks, addFeedback }) => {
             </form>
           </div>
 
-          <div className="feedback-list">
-            <h3>Recent Reviews</h3>
+          <div className="feedback-display">
+            <h3>What Our Clients Say</h3>
             {feedbacks.length === 0 ? (
               <p className="no-feedback">No feedback yet. Be the first to leave a review!</p>
             ) : (
-              <div className="feedback-items">
-                {feedbacks.slice().reverse().map((feedback) => (
-                  <div key={feedback.id} className="feedback-item">
-                    <div className="feedback-header">
-                      <strong>{feedback.name}</strong>
-                      <span className="feedback-date">{feedback.date}</span>
+              <div className="feedback-carousel">
+                <div className="feedback-track">
+                  {feedbacks.map((feedback) => (
+                    <div key={feedback.id || feedback._id} className="feedback-card">
+                      <div className="feedback-stars">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <span key={star} className={star <= feedback.rating ? 'star filled' : 'star'}>
+                            ★
+                          </span>
+                        ))}
+                      </div>
+                      <p className="feedback-comment">"{feedback.comment}"</p>
+                      <div className="feedback-author">
+                        <strong>{feedback.name}</strong>
+                        <span className="feedback-date">{feedback.date}</span>
+                      </div>
                     </div>
-                    <div className="feedback-stars">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <span key={star} className={star <= feedback.rating ? 'star filled' : 'star'}>
-                          ★
-                        </span>
-                      ))}
-                    </div>
-                    <p className="feedback-comment">{feedback.comment}</p>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             )}
           </div>
