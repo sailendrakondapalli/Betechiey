@@ -1,5 +1,5 @@
 .clients {
-  background: white;
+  background: var(--bg-card);
 }
 
 .stats-section {
@@ -41,7 +41,7 @@
 }
 
 .client-card {
-  background: #f8f9fa;
+  background: var(--bg-secondary);
   padding: 40px 30px;
   border-radius: 15px;
   text-align: center;
@@ -62,10 +62,10 @@
 .client-card h3 {
   font-size: 1.3rem;
   margin-bottom: 10px;
-  color: #2c3e50;
+  color: var(--text-heading);
 }
 
 .client-card p {
-  color: #7f8c8d;
+  color: var(--text-secondary);
   font-size: 0.95rem;
 }

@@ -7,6 +7,7 @@ import Clients from './components/Clients';
 import Feedback from './components/Feedback';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import { ThemeProvider } from './contexts/ThemeContext';
 import { getFeedbacks, addFeedback } from './api/feedbackAPI';
 
 function App() {
@@ -30,15 +31,17 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <Services />
-      <Clients />
-      <Feedback feedbacks={feedbacks} addFeedback={handleAddFeedback} />
-      <Footer />
-      <WhatsAppButton />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <Header />
+        <Hero />
+        <Services />
+        <Clients />
+        <Feedback feedbacks={feedbacks} addFeedback={handleAddFeedback} />
+        <Footer />
+        <WhatsAppButton />
+      </div>
+    </ThemeProvider>
   );
 }
 

@@ -1,19 +1,48 @@
+/* Light Theme (Default) */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-card: #ffffff;
+  --text-primary: #333333;
+  --text-secondary: #7f8c8d;
+  --text-heading: #2c3e50;
+  --border-color: #e0e0e0;
+  --shadow: rgba(0,0,0,0.08);
+  --shadow-hover: rgba(0,0,0,0.15);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-card: #333333;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-heading: #ffffff;
+  --border-color: #444444;
+  --shadow: rgba(0,0,0,0.3);
+  --shadow-hover: rgba(0,0,0,0.5);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+  color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
+  background-color: var(--bg-primary);
 }
 
 .App {
   min-height: 100vh;
   overflow-x: hidden;
+  background-color: var(--bg-primary);
 }
 
 section {
@@ -30,12 +59,12 @@ h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
   text-align: center;
-  color: #2c3e50;
+  color: var(--text-heading);
 }
 
 .section-subtitle {
   text-align: center;
-  color: #7f8c8d;
+  color: var(--text-secondary);
   margin-bottom: 50px;
   font-size: 1.1rem;
 }

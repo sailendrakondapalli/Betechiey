@@ -1,5 +1,5 @@
 .feedback {
-  background: #f8f9fa;
+  background: var(--bg-secondary);
   overflow-x: hidden;
 }
 
