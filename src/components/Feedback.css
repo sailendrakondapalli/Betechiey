@@ -1,5 +1,6 @@
 .feedback {
   background: #f8f9fa;
+  overflow-x: hidden;
 }
 
 .rating-summary {
@@ -43,6 +44,7 @@
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
 }
 
 .feedback-form-container h3,
@@ -128,24 +130,19 @@
   position: relative;
   width: 100%;
   max-width: 100%;
+  margin: 0 -10px;
 }
 
 .feedback-track {
   display: flex;
   gap: 20px;
-  animation: scroll 30s linear infinite;
-  width: max-content;
+  animation: scroll 25s linear infinite;
+  width: fit-content;
+  padding: 0 10px;
 }
 
 .feedback-track:hover {
   animation-play-state: paused;
-}
-
-/* Create duplicate content for seamless loop */
-.feedback-track::after {
-  content: '';
-  display: flex;
-  gap: 20px;
 }
 
 @keyframes scroll {
@@ -153,7 +150,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-100% - 20px));
+    transform: translateX(calc(-50% - 10px));
   }
 }
 
